@@ -17,6 +17,8 @@ defmodule DisabledBugWeb.Router do
   scope "/", DisabledBugWeb do
     pipe_through :browser
 
+    live "/disabled-bug", DisabledBugLive
+
     get "/", PageController, :home
   end
 
