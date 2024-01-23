@@ -8,13 +8,13 @@ defmodule DisabledBugWeb.DisabledBugLive do
   def render(assigns) do
     ~H"""
     <input
+      value={if @disabled, do: "disabled", else: "not disabled"}
       disabled={@disabled}
-      placeholder={@disabled}
       phx-update="ignore"
-      value={inspect(@disabled)}
       id="test-input"
+      class="disabled:bg-gray-700 disabled:text-white"
     />
-    <button phx-click="toggle">Toggle</button>
+    <button phx-click="toggle" class="bg-green-100">Toggle</button>
     """
   end
 
